@@ -4,7 +4,7 @@ const kinoSchema = new Schema({
     title: { type: String, length: 150, unique: true, trim: true },
     description: String,
     photo: String,
-    trailer: String,
+    trailer: { type: String, unique: true, trim: true },
     category: { type: Schema.Types.ObjectId, ref: 'category' },
     year: { type: Number, default: 2000 },
     budget: { type: Number, default: 0 },
