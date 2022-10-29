@@ -3,6 +3,8 @@ const cors = require('cors');
 const fileUpload = require('express-fileupload');
 const { config } = require('dotenv');
 const { connect } = require('mongoose');
+const fs = require('fs/promises');
+const path = require('path');
 
 config();
 const app = express();
@@ -23,6 +25,7 @@ app.use('/auth', require('./auth/auth.router'));
         process.exit(0);
     }
 })();
+
 
 const port = process.env.PORT || 80;
 app.listen(port, () => {
