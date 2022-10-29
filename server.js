@@ -19,6 +19,7 @@ app.use('/auth', require('./auth/auth.router'));
 
 (async () => {
     try {
+        await fs.mkdir(path.join(__dirname, '/uploads'))
         await connect(process.env.LINK, { useNewUrlParser: true });
     } catch (error) {
         console.log(error.message);
